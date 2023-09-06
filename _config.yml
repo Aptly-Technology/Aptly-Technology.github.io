@@ -2,7 +2,7 @@ title: Aptly Blog
 email: jayakumar.e@gmail.com
 description: Blog portal of Aptly Technologies
 author: Jayakumar
-baseurl: "/blog"
+baseurl: "/"
 url: "#"
 
 # Social Profiles
