@@ -1,0 +1,134 @@
+---
+layout: post
+title: "Using PowerShell with Azure"
+date: 2023-08-30 23:45:13 -0400
+background: "/img/posts/05.jpg"
+---
+
+<p>
+  Using PowerShell with Azure allows you to automate and manage Azure resources,
+  such as virtual machines, storage accounts, and more, through Azure PowerShell
+  modules. Here are the steps to get started:
+</p>
+<ol>
+  <li>
+    <p>
+      <strong>Install PowerShell</strong>: Ensure that you have PowerShell
+      installed on your machine. You can download the latest version from the
+      <a
+        href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell"
+        >official PowerShell website</a
+      >.
+    </p>
+  </li>
+  <li>
+    <p><strong>Install Azure PowerShell Modules</strong>:</p>
+    <ul>
+      <li>
+        <p>
+          <strong>Azure PowerShell Module (Az)</strong>: This module is the new
+          and recommended module for managing Azure resources. To install it,
+          open PowerShell as an administrator and run the following command:
+        </p>
+        <pre><code class="lang-powershell"><span class="hljs-keyword">Install</span>-<span class="hljs-keyword">Module</span> -<span class="hljs-keyword">Name</span> Az -AllowClobber -<span class="hljs-keyword">Scope</span> CurrentUser
+</code></pre>
+      </li>
+      <li>
+        <p>
+          <strong>AzureRM Module (Older version)</strong>: If you have an
+          existing setup using AzureRM, you can continue to use it, but it&#39;s
+          recommended to migrate to the Az module. To install AzureRM, use this
+          command:
+        </p>
+        <pre><code class="lang-powershell"><span class="hljs-keyword">Install</span>-<span class="hljs-keyword">Module</span> -<span class="hljs-keyword">Name</span> AzureRM -AllowClobber -<span class="hljs-keyword">Scope</span> CurrentUser
+</code></pre>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Connect to Azure</strong>:</p>
+    <ul>
+      <li>
+        <p>
+          <strong>Az Module</strong>: To connect to your Azure account using the
+          Az module, use the following command and follow the instructions to
+          sign in:
+        </p>
+        <pre><code class="lang-powershell"><span class="hljs-attribute">Connect-AzAccount</span>
+</code></pre>
+      </li>
+      <li>
+        <p>
+          <strong>AzureRM Module</strong>: To connect using the AzureRM module,
+          use this command:
+        </p>
+        <pre><code class="lang-powershell"><span class="hljs-attribute">Connect-AzureRmAccount</span>
+</code></pre>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Azure Resource Management</strong>:</p>
+    <ul>
+      <li>
+        <p>
+          <strong>Az Module</strong>: With the Az module, you can manage Azure
+          resources using commands like <code>New-AzResourceGroup</code>,
+          <code>New-AzVM</code>, <code>New-AzStorageAccount</code>, and more.
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>AzureRM Module</strong>: For the AzureRM module, you would use
+          similar commands like <code>New-AzureRmResourceGroup</code>,
+          <code>New-AzureRmVM</code>, <code>New-AzureRmStorageAccount</code>,
+          and so on.
+        </p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Run Azure PowerShell Commands</strong>:</p>
+    <ul>
+      <li>
+        Once you&#39;re connected to Azure, you can start running PowerShell
+        commands to manage your Azure resources. For example:
+        <pre><code class="lang-powershell">New-AzResourceGroup -Name MyResourceGroup -<span class="hljs-keyword">Location</span> <span class="hljs-title">EastUS</span>
+</code></pre>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>
+      <strong>Disconnect</strong>: When you&#39;re done with your Azure session,
+      you can disconnect using the following commands:
+    </p>
+    <ul>
+      <li>
+        <p><strong>Az Module</strong>:</p>
+        <pre><code class="lang-powershell"><span class="hljs-attribute">Disconnect-AzAccount</span>
+</code></pre>
+      </li>
+      <li>
+        <p><strong>AzureRM Module</strong>:</p>
+        <pre><code class="lang-powershell"><span class="hljs-attribute">Disconnect-AzureRmAccount</span>
+</code></pre>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>
+      <strong>Update Modules</strong>: Periodically, update your Azure
+      PowerShell modules to ensure you have the latest features and bug fixes:
+    </p>
+    <pre><code class="lang-powershell"><span class="hljs-keyword">Update</span>-<span class="hljs-keyword">Module</span> -<span class="hljs-keyword">Name</span> Az  # <span class="hljs-keyword">for</span> Az <span class="hljs-keyword">module</span>
+<span class="hljs-keyword">Update</span>-<span class="hljs-keyword">Module</span> -<span class="hljs-keyword">Name</span> AzureRM  # <span class="hljs-keyword">for</span> AzureRM <span class="hljs-keyword">module</span> (<span class="hljs-keyword">if</span> used)
+</code></pre>
+  </li>
+</ol>
+<p>
+  That&#39;s a basic overview of how to use PowerShell with Azure. You can
+  explore the Azure documentation and PowerShell cmdlet reference for more
+  advanced tasks and automation scenarios. Additionally, you can create and run
+  PowerShell scripts to automate complex Azure tasks and workflows.
+</p>
